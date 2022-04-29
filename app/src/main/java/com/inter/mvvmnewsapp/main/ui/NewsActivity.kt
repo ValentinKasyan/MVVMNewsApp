@@ -1,21 +1,14 @@
-package com.inter.mvvmnewsapp.ui
+package com.inter.mvvmnewsapp.main.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.view.View
-import androidx.core.view.children
-import androidx.core.view.get
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.findFragment
-import androidx.navigation.findNavController
-import androidx.navigation.fragment.findNavController
-import androidx.navigation.ui.setupWithNavController
 import com.inter.mvvmnewsapp.R
 import com.inter.mvvmnewsapp.databinding.ActivityNewsBinding
-import com.inter.mvvmnewsapp.ui.fragment.BreakingNewsFragment
-import com.inter.mvvmnewsapp.ui.fragment.SavedNewsFragment
-import com.inter.mvvmnewsapp.ui.fragment.SearchNewsFragment
+import com.inter.mvvmnewsapp.main.ui.fragment.BreakingNewsFragment
+import com.inter.mvvmnewsapp.main.ui.fragment.SavedNewsFragment
+import com.inter.mvvmnewsapp.main.ui.fragment.SearchNewsFragment
 
 class NewsActivity : AppCompatActivity() {
     private  lateinit var binding: ActivityNewsBinding
