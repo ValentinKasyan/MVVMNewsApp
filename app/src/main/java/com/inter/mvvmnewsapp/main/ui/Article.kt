@@ -1,6 +1,15 @@
 package com.inter.mvvmnewsapp.main.ui
 
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+
+@Entity(
+    tableName = "article"
+)
 data class Article(
+    //add id for DB
+    @PrimaryKey(autoGenerate = true)
+    var id: Int? = null,
     val author: String,
     val content: String,
     val description: String,
