@@ -1,4 +1,4 @@
-package com.inter.mvvmnewsapp.main.ui
+package com.inter.mvvmnewsapp.main.models
 
 data class Source(
     val id: String,

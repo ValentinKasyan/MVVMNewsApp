@@ -1,6 +1,6 @@
 package com.inter.mvvmnewsapp.main.api
 
-import com.inter.mvvmnewsapp.main.ui.NewsResponse
+import com.inter.mvvmnewsapp.main.models.NewsResponse
 import com.inter.mvvmnewsapp.main.util.Constants.Companion.API_KEY
 import retrofit2.Response
 import retrofit2.http.GET
