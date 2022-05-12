@@ -3,8 +3,13 @@ package com.inter.mvvmnewsapp.main.ui
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.get
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.findNavController
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.fragment.findNavController
+import androidx.navigation.ui.setupWithNavController
 import com.inter.mvvmnewsapp.R
 import com.inter.mvvmnewsapp.databinding.ActivityNewsBinding
 import com.inter.mvvmnewsapp.main.db.ArticleDatabase
@@ -26,29 +31,8 @@ class NewsActivity : AppCompatActivity() {
         val viewModelProviderFactory=NewsViewModelProviderFactory(newsRepository)
         viewModel=ViewModelProvider(this,viewModelProviderFactory).get(NewsViewModel::class.java)
 
-        val breakingNewsFragment = BreakingNewsFragment()
-        val savedNewsFragment = SavedNewsFragment()
-        val searchNewsFragment = SearchNewsFragment()
-        supportFragmentManager.beginTransaction().apply {
-            replace(R.id.fragment, breakingNewsFragment)
-            commit()
-        }
+        val navHostFragment=supportFragmentManager.findFragmentById(R.id.newsNavHostFragment)as NavHostFragment
+        binding.bottomNavigationMenu.setupWithNavController(navHostFragment.findNavController())
 
-        fun setFragment(selectedFragment: Fragment) {
-            supportFragmentManager.beginTransaction().apply {
-                replace(R.id.fragment, selectedFragment)
-                addToBackStack(null)
-                commit()
-            }
-        }
-
-        binding.bottomNavigationMenu.setOnItemSelectedListener {
-            when (it.itemId) {
-                R.id.breakingNewsFragment -> setFragment(breakingNewsFragment)
-                R.id.searchNewsFragment -> setFragment(searchNewsFragment)
-                R.id.savedNewsFragment -> setFragment(savedNewsFragment)
-            }
-            true
-        }
     }
 }
