@@ -1,9 +1,10 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
-
+    id 'androidx.navigation.safeargs.kotlin'
 }
 apply plugin: 'kotlin-kapt'
+
 
 android {
     compileSdk 31
@@ -77,5 +78,6 @@ dependencies {
     // Glide
     implementation 'com.github.bumptech.glide:glide:4.11.0'
     kapt 'com.github.bumptech.glide:compiler:4.11.0'
+
 
 }
