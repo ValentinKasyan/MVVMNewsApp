@@ -13,24 +13,24 @@ import com.inter.mvvmnewsapp.main.ui.NewsViewModel
 
 class ArticleFragment : Fragment(R.layout.fragment_article) {
 
-    private lateinit var binding:FragmentArticleBinding
+    private lateinit var binding: FragmentArticleBinding
     lateinit var viewModel: NewsViewModel
-    val args:ArticleFragmentArgs by navArgs()
-    val TAG ="ArticleFragment"
+    val args: ArticleFragmentArgs by navArgs()
+    val TAG = "ArticleFragment"
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         viewModel = (activity as NewsActivity).viewModel
-        binding= FragmentArticleBinding.bind(view)
+        binding = FragmentArticleBinding.bind(view)
         val article = args.article
         binding.webView.apply {
-            webViewClient= WebViewClient()
-            loadUrl(article.url)
+            webViewClient = WebViewClient()
+            article.url?.let { loadUrl(it) }
         }
 
         binding.fab.setOnClickListener {
             viewModel.saveArticle(article)
-            Snackbar.make(view,"Article saved successfully",Snackbar.LENGTH_SHORT).show()
+            Snackbar.make(view, "Article saved successfully", Snackbar.LENGTH_SHORT).show()
         }
     }
 }
