@@ -9,7 +9,8 @@ import com.inter.mvvmnewsapp.main.models.Article
 
 @Database(
     entities = [Article::class],
-    version = 2
+    version = 3
+
 )
 @TypeConverters(Converters::class)
 abstract class ArticleDatabase : RoomDatabase() {

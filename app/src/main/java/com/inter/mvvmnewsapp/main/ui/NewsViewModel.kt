@@ -25,14 +25,13 @@ class NewsViewModel(
     val newsRepository: NewsRepository
 ) : AndroidViewModel(app) {
     val breakingNews: MutableLiveData<Resource<NewsResponse>> = MutableLiveData()
-
-    // TODO: implement logic
     var breakingNewsPage = 1
     var breakingNewsResponse: NewsResponse? = null
 
     val searchNews: MutableLiveData<Resource<NewsResponse>> = MutableLiveData()
     var searchNewsPage = 1
     var searchNewsResponse: NewsResponse? = null
+
 
     init {
         getBreakingNews("us")

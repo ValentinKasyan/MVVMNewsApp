@@ -9,11 +9,7 @@
         android:id="@+id/etSearch"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="44dp"
-        android:ems="10"
         android:hint="Search..."
-        android:inputType="textPersonName"
-        android:text="Text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -21,8 +17,8 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvSearchNews"
-        android:layout_width="404dp"
-        android:layout_height="572dp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
         android:layout_marginTop="1dp"
         android:clipToPadding="false"
         android:paddingBottom="50dp"
@@ -32,6 +28,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etSearch"
         app:layout_constraintVertical_bias="0.0" />
+
+    <include
+        android:id="@+id/itemErrorMessage"
+        layout="@layout/item_error_message"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ProgressBar
         android:id="@+id/paginationProgressBar"
